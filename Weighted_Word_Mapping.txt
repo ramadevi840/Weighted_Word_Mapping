@@ -1,0 +1,29 @@
+class Solution {
+    public String mapWordWeights(String[] words, int[] weights) {
+       // here we creating stringBuilder to store resultent array
+        StringBuilder sb= new StringBuilder();
+        for(String i : words){
+            int sum=0;
+            char ch[]= i.toCharArray();
+            for(char c : ch){
+                sum+=weights[c-'a'];
+            }
+            int l=sum%26;
+            char res=(char)('z'-l);
+            sb.append(res);
+        }
+        return sb.toString();
+    }
+    // char[] alp= {'z','y','x','w','v','u','t','s','r','q','p','o','n','m','l','k','j','i','h','g','f','e','d','c','b','a'};
+    //     StringBuilder sb= new StringBuilder();
+    //     for(String i : words){
+    //         int sum=0;
+    //         char ch[]= i.toCharArray();
+    //         for(char c : ch){
+    //             sum+=weights[c-'a'];
+    //         }
+    //         int l=sum%26;
+    //         sb.append(alp[l]);
+    //     }
+    //     return sb.toString();
+}
